@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'jacoco'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -22,6 +23,12 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
     }
 }
 
